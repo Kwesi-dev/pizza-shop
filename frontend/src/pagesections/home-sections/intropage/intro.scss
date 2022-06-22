@@ -3,4 +3,80 @@
     width: 100%;
     height: calc(100vh - 130px);
     background: $linear-gradient;
+
+    &-wrapper{
+        width: 80%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: auto;
+        align-items: center;
+
+        .intro-left{
+            .delivery-info{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                background-color: $lightOrange;
+                width: min(50%, 260px);
+                padding: 5px;
+                box-sizing: border-box;
+                border-radius: 10px;
+                span{
+                    font-size: 1.5rem;
+                    color: $lightBlue;
+                }
+                img{
+                    width: 25px;
+                    height: 25px;
+                    object-fit: cover;
+                    margin-right: 10px;
+                }
+            }
+            .intro-header{
+                margin-bottom: 30px;
+                .main-title{
+                    font-size: 5rem;
+                    font-weight: bold;
+                }
+                .second-title{
+                    display: flex;
+                    h1{
+                        margin-right: 15px;
+                    }
+                    .coloured{
+                        color: $deepOrange;
+                    }
+                }
+                
+            }
+            .intro-text-container{
+                margin-bottom: 30px;
+                .intro-text{
+                    font-size: 1.5rem;
+                    color: $lightBlue;
+                }
+            }
+            .intro-left-bottom{
+                img{
+                    width: 120px;
+                    height: 50px;
+                    object-fit: cover;
+                    margin-right: 20px;
+                }
+            }
+        }
+        .intro-right{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end!important;
+            img{
+                width: 500px;
+                height: 500px;
+                object-fit: cover;
+            }
+        }
+    }
 }

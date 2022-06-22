@@ -1,11 +1,15 @@
 import "./intro.scss"
+import appstore from "../../../assets/images/appstore.png"
+import playstore from "../../../assets/images/playstore.png"
+import pizza from "../../../assets/images/pizzaImg.png"
+import deliveryTruck from "../../../assets/images/delivery-truck.png"
 const IntroSection = () => {
   return (
     <section className="introSection">
-        <div className="intoSection-wrapper">
+        <div className="introSection-wrapper">
             <div className="intro-left">
               <div className="delivery-info">
-                icon
+                <img src={deliveryTruck} alt="delivery-track-icon" />
                 <span>Faster Delivery Guaranteed</span>
               </div>
               <header className="intro-header">
@@ -19,15 +23,15 @@ const IntroSection = () => {
                 <p className="intro-text">
                   Get 10% instant off for all order and $200 signup bonus
                 </p>
-                <p>today for new registration</p>
+                <p className="intro-text">today for new registration</p>
               </div>
               <div className="intro-left-bottom">
-                <img src="" alt="playstore" />
-                <img src="" alt="applestore" />
+                <img src={playstore} alt="playstore" />
+                <img src={appstore} alt="applestore" />
               </div>
             </div>
             <div className="intro-right">
-              <img src="" alt="" />
+              <img src={pizza} alt="pizza-img" />
             </div>
         </div>
     </section>
