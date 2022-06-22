@@ -1,0 +1,6 @@
+@use "../../../utils/globals" as *;
+.introSection{
+    width: 100%;
+    height: calc(100vh - 130px);
+    background: $linear-gradient;
+}

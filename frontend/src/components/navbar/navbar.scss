@@ -1,0 +1,114 @@
+@use "../../utils/globals" as *;
+.navbar{
+    width: 100%;
+    height: 130px;   
+    background: rgb(252,245,239);
+    background: linear-gradient(90deg, rgba(252,245,239,1) 0%, rgba(252,245,239,1) 54%, rgba(252,251,249,1) 100%);
+    box-sizing: border-box;
+    .navbar-wrapper{
+        width: 80%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        margin: 0 auto;
+        justify-content: space-between;
+        .navbar-logo{
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            .logo{
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                margin-right: 8px;
+            }
+            .logo-header{
+                font-size: 3rem;
+                color: $deepBlue;
+                letter-spacing: -1px;
+            }
+        }
+        .nav-links{
+            padding-bottom: 20px;
+
+            .nav-links-container{
+                display: flex;
+                align-items: center;
+
+                .nav-link{
+                    margin-right: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+                    .nav-link-image{
+                        width: 15px;
+                        height: 15px;
+                        object-fit: cover;
+                        display: none;
+                    }
+                    p{
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        color: $lightBlue;
+                    }
+                    &.active{
+                        p{
+                            color: $deepOrange;
+                        }
+                        .nav-link-image{
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        .nav-last{
+            display: flex;
+            padding-bottom: 20px;
+            .last-left{
+                padding-right: 20px;
+                display: flex;
+                flex-direction: column;
+                border-right: 2px solid $deepOrange;
+                margin-right: 10px;
+                .order-title{
+                    font-size: 1rem;
+                    color: $lightBlue;
+                    font-weight: bold;
+                    align-self: flex-end;
+                }
+                .order-telephone{
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: $deepOrange;
+                }
+            }
+            .last-right{
+                display: flex;
+                align-items: flex-end;
+                position: relative;
+                .cart-icon{
+                    color: $lightBlue;
+                    margin-right: 10px;
+                    font-size: 1.8rem;
+                    cursor: pointer;
+                }
+                span{
+                    background-color: $deepOrange;
+                    padding: 2px 6px;
+                    color: white;
+                    border-radius: 6px;
+                    position: absolute;
+                    left: 0;
+                    top: 0px;
+                }
+                .search-icon{
+                    font-size: 1.8rem;
+                    color: $lightBlue;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
