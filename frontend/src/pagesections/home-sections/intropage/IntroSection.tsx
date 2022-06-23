@@ -1,7 +1,7 @@
 import "./intro.scss"
 import appstore from "../../../assets/images/appstore.png"
 import playstore from "../../../assets/images/playstore.png"
-import pizza from "../../../assets/images/pizzaImg.png"
+import pizza from "../../../assets/images/order1.png"
 import deliveryTruck from "../../../assets/images/delivery-truck.png"
 const IntroSection = () => {
   return (
