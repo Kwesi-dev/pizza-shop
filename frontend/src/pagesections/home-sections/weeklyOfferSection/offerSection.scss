@@ -55,6 +55,10 @@
         .slider-card-container{
             width: 100%;
             display: flex;
+            .mySwiper{
+                width: 100%;
+                height: 450px;
+            }
         }
     }
 }
