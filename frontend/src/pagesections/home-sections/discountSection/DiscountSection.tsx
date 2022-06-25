@@ -2,7 +2,7 @@ import "./discountSection.scss"
 import discountImg from "../../../assets/images/discount.png"
 import DiscountCard from "../../../components/discountCard/DiscountCard"
 import cardp from "../../../assets/images/cardp.png"
-import cardp1 from "../../../assets/images/cardp1.png"
+import cardp1 from "../../../assets/images/offerpizza.jpg"
 type carddetails = {
     id: number,
     title: string,
