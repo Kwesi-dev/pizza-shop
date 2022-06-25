@@ -5,6 +5,7 @@ import OfferSection from "../../pagesections/home-sections/weeklyOfferSection/Of
 import ShopSection from "../../pagesections/home-sections/shopsSection/ShopSection"
 import DeliverySectionOne from "../../pagesections/home-sections/DeliverySectionOne/DeliverySectionOne"
 import FastestDeliverySection from "../../pagesections/home-sections/fastestDeliverySection/FastestDeliverySection"
+import HomeAboutSection from "../../pagesections/home-sections/homeAboutSection/HomeAboutSection"
 const Home = () => {
   return (
     <section className="home">
@@ -14,6 +15,7 @@ const Home = () => {
         <ShopSection/>
         <DeliverySectionOne/>
         <FastestDeliverySection/>
+        <HomeAboutSection/>
     </section>
   )
 }
