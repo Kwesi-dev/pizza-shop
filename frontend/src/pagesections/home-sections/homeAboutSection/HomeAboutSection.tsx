@@ -2,6 +2,7 @@ import { Check } from "@mui/icons-material"
 import pizza from "../../../assets/images/logo.png"
 import "./homeAboutSection.scss"
 import WifiCalling3Icon from '@mui/icons-material/WifiCalling3';
+import group2Img from "../../../assets/images/group2.png"
 const HomeAboutSection = () => {
   return (
     <section className="homeAboutSection">
@@ -45,10 +46,7 @@ const HomeAboutSection = () => {
                         <p>get 1 free</p>
                     </div>
                 </div>
-                {/* <div className="right-image-container"></div>
-                <div className="right-image">
-                    <img src={pizzabowl} alt="pizzabowl"/>
-                </div> */}
+                <img src={group2Img} alt="pizzabowl" className="right-img"/>
             </div>
         </div>
     </section>

@@ -59,26 +59,10 @@
                 right: -200px;
                 border-radius: 20px;
             }
-            .right-image-container{
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                background-color: $lightOrange;
-                top: 0;
-                right: -80px;
-                mask-image: url("../../../assets/images/blob2.svg");
-            }
-            .right-image{
-                width:100%;
-                height: 100%;
-                mask-image: url("../../../assets/images/blob2.svg");
-                
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                    align-self: flex-end;
-                }
+            .right-img{
+                width:500px;
+                height: 500px;
+                object-fit: cover;
             }
             .call-container{
                 width: 220px;

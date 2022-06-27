@@ -13,11 +13,11 @@ const Navbar = () => {
             </div>
             <nav className="nav-links">
                 <ul className="nav-links-container">
-                    <li className="nav-link active">
+                    <li className="nav-link">
                         <img src={pizzaSlice} alt="" className="nav-link-image"/>
                         <p>Home</p>
                     </li>
-                    <li className="nav-link">
+                    <li className="nav-link active">
                         <img src={pizzaSlice} alt="" className="nav-link-image"/>
                         <p>About</p>
                     </li>

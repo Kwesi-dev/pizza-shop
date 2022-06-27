@@ -2,7 +2,8 @@ import React from 'react';
 import './App.scss';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
-
+import Footer from './components/footer/Footer';
+import About from './pages/about/About';
 function App() {
   return (
     <div className="App">
@@ -10,8 +11,12 @@ function App() {
           <Navbar/>
       </header>
       <main>
-        <Home/>
+        {/* <Home/> */}
+        <About/>
       </main>
+      <footer>
+          <Footer/>
+      </footer>
     </div>
   );
 }
