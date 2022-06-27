@@ -1,7 +1,6 @@
 import { Check } from "@mui/icons-material"
 import pizza from "../../../assets/images/logo.png"
 import "./homeAboutSection.scss"
-import pizzabowl from "../../../assets/images/pizzabowl.webp"
 import WifiCalling3Icon from '@mui/icons-material/WifiCalling3';
 const HomeAboutSection = () => {
   return (

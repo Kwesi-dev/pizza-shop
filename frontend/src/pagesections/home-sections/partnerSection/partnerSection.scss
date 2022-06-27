@@ -1,0 +1,164 @@
+@use "../../../utils/globals" as *;
+.partnerSection{
+    width: 100%;
+    height: 100%;
+    padding: 60px;
+    box-sizing: border-box;
+    &-wrapper{
+        width: 80%;
+        height: 100%;
+        margin: auto;
+
+        .partner-header{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h1{
+                font-size: 2.8rem;
+                font-weight: bold;
+                text-align: center;
+            }
+            img{
+                width: 200px;
+                opacity: 0.3;
+            }
+        }
+        .partner-cards-container{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 80px;
+            .partner-card{
+                width: 100%;
+                height: 250px;
+                position: relative;
+                background-color: #ffff;
+                -webkit-box-shadow: 5px 5px 15px -6px #000000; 
+                box-shadow: 5px 5px 15px -6px #000000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .p-card-icon{
+                    font-size: 4rem;
+                    color: $deepOrange;
+                    font-weight: bold;
+                    padding: 14px;
+                    background-color: #ffff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -40px;          
+                }
+                .p-card-body{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    h2{
+                        text-align: center;
+                        text-transform: capitalize;
+                        font-size: 1.8rem;
+                        margin-bottom: 20px;
+                    }
+                    p{
+                        font-size: 1.4rem;
+                        width: 80%;
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                    .p-card-button{
+                        border: none;
+                        padding: 8px 16px;
+                        background-color: $deepOrange;
+                        border-radius: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 140px;
+                        cursor: pointer;
+                        .p-card-btn-icon{
+                            color: #ffff;
+                            font-size: 2rem;
+                            margin-right: 5px;
+                        }
+                        span{
+                            font-size: 1rem;
+                            color: #ffff;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .subscribe-container{
+            width: 100%;
+            height: 300px;
+            border: 2px dashed $deepOrange;
+            background: $linear-gradient;
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+            border-radius: 20px;
+            padding: 30px;
+            box-sizing: border-box;
+            .subscribe-left{
+                margin-right: 30px;
+                img{
+                    width: 22rem;
+                    height: 220px;
+                    object-fit: contain;
+                }
+            }
+            .subscribe-right{
+                h1{
+                    font-size: 2.8rem;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                    text-transform: capitalize;
+                }
+                p{
+                    font-size: 1.5rem;
+                    margin-bottom: 20px;
+                }
+                .subscribe-btn{
+                    width: 70%;
+                    height: 40px;
+                    border: 2px solid lightgray;
+                    background-color: #ffff;
+                    box-sizing: border-box;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    input{
+                        flex: 2;
+                        height: 80%;
+                        border: none;
+                        font-size: 1.5rem;
+                        padding: 5px 10px 5px 15px;
+                        box-sizing: border-box;
+                        border-radius: 20px;
+
+                    }
+                    .subs-btn{
+                        flex: 1;
+                        height: 100%;
+                        border-radius: 20px;
+                        border: none;
+                        background-color: $deepOrange;
+                        color: #ffff;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
