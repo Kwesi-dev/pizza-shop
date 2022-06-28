@@ -1,0 +1,105 @@
+@use "../../../utils/globals" as *;
+.about-intro{
+    width: 100%;
+    height: 100%;
+
+    &-wrapper{
+        width: 80%;
+        height: 100%;
+        margin: auto;
+
+        .intro-main-body1{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+            .about-intro-left{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                   width: 600px;
+                   height: 600px;
+                   object-fit: cover; 
+                }
+            }
+            .about-intro-right{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h1{
+                    font-size: 2.8rem;
+                    font-weight: bold;
+                    text-align: left;
+                    margin-bottom: 30px;
+                }
+                p{
+                    font-size: 1.5rem;
+                    color: $lightBlue;
+                    margin-bottom: 20px;
+                    font-weight: 500;
+                }
+                .left-lists{
+                    margin-top: 30px;
+    
+                    li{
+                        display: flex;
+                        .check-icon{
+                            font-size: 1.6rem;
+                            color: #ffff;
+                            padding: 5px;
+                            background-color: green;
+                            border-radius: 50%;
+                            margin-right: 20px;     
+                        }
+                    }
+                }
+            }
+        }
+        .intro-main-body2{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+
+            .about-intro-left1{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h1{
+                    font-size: 2.8rem;
+                    font-weight: bold;
+                    text-align: left;
+                    margin-bottom: 30px;
+                }
+                p{
+                    font-size: 1.5rem;
+                    color: $lightBlue;
+                    margin-bottom: 20px;
+                    font-weight: 500;
+                }
+            }
+            .about-intro-right2{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                img{
+                    width: 600px;
+                    height: 600px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

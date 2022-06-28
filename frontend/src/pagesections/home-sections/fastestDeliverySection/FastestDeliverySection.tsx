@@ -6,7 +6,7 @@ import FlatwareOutlinedIcon from '@mui/icons-material/FlatwareOutlined';
 import PaymentOutlinedIcon from '@mui/icons-material/PaymentOutlined';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import manImg from "../../../assets/images/man.png"
-import pizzawood from "../../../assets/images/pizzaWood.png"
+import DeliveryFooter from '../../../components/deliveryFooter/DeliveryFooter';
 const FastestDeliverySection = () => {
   return (
     <section className="fastestDeliverySection">
@@ -59,15 +59,7 @@ const FastestDeliverySection = () => {
                     </div>
                 </div>  
             </div>
-            <div className="delivery-footer">
-                <div className="footer-title">
-                    <h1>best cheese pizza available in</h1>
-                    <h1>your town by Pizza</h1>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, nesciunt cumque! Ab rem ipsum hic tempora natus sunt dolorem consequatur volu</p>
-                <button className="delivery-footer-button">visit restaurant</button>
-                <img src={pizzawood} alt="pizza-img" />
-            </div>
+            <DeliveryFooter/>
         </div>
     </section>
   )
