@@ -47,7 +47,11 @@ const AboutIntro = () => {
                     <h1>What we do</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae labore? Distinctio, nam dolore?</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae labore? Distinctio, nam dolore? Deleniti minima rerum inventore nobis? Im</p>
-                    <Accordion/>
+                    <div className="accordion-container">
+                        <Accordion/>
+                        <Accordion/>
+                        <Accordion/>
+                    </div>
                 </div>
                 <div className="about-intro-right2">
                     <img src={group3Img} alt="restuarant-img" />
