@@ -1,8 +1,36 @@
 import "./aboutIntro.scss"
 import group1Img from "../../../assets/images/group1.png"
 import group3Img from "../../../assets/images/group3.png"
-import Accordion from "../../../components/accordion/Accordion"
 import { Check } from "@mui/icons-material"
+import Accordion from "../../../components/accordion/Accordion"
+type accordDataType = {
+    id: number,
+    title: string,
+    details: string
+}
+
+const accordData : accordDataType[] = [
+    {
+        id: 1,
+        title: "Lorem ipsum dolor sit amet",
+        details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et, viverra nisi, nisi, lectus tincidunt turpis sed. Cras porttitor."
+    },
+    {
+        id: 2,
+        title: "Lorem ipsum dolor sit amet",
+        details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et, viverra nisi, nisi, lectus tincidunt turpis sed. Cras porttitor."
+    },
+    {
+        id: 3,
+        title: "Lorem ipsum dolor sit amet",
+        details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et, viverra nisi, nisi, lectus tincidunt turpis sed. Cras porttitor."
+    },
+    {
+        id: 4,
+        title: "Lorem ipsum dolor sit amet",
+        details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et, viverra nisi, nisi, lectus tincidunt turpis sed. Cras porttitor."
+    },
+]
 const AboutIntro = () => {
   return (
     <section className="about-intro">
@@ -10,7 +38,7 @@ const AboutIntro = () => {
             <header className="about-header">
                 <h1>About Us</h1>
                 <div className="current-page">
-                    <h3>Home/</h3>
+                    <h3>Home /</h3>
                     <h3>About Us</h3>
                 </div>
             </header>
@@ -47,11 +75,9 @@ const AboutIntro = () => {
                     <h1>What we do</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae labore? Distinctio, nam dolore?</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae labore? Distinctio, nam dolore? Deleniti minima rerum inventore nobis? Im</p>
-                    <div className="accordion-container">
-                        <Accordion/>
-                        <Accordion/>
-                        <Accordion/>
-                    </div>
+                    {accordData.map((data)=>
+                        <Accordion key={data.id} data={data}/>
+                    )}
                 </div>
                 <div className="about-intro-right2">
                     <img src={group3Img} alt="restuarant-img" />

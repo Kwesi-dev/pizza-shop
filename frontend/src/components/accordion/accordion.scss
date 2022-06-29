@@ -1,49 +1,49 @@
 @use "../../utils/globals" as *;
 .accordion{
     width: 100%;
-    height: 100%;
-    cursor: pointer;
-    &-wrapper{
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    .accordion-item{
         width: 100%;
-        height: 100%;
-        position: relative;
-        .accordion-item{
+        height: fit-content;
+        box-sizing: border-box;
+
+        .accordion-header{
+            width: 100%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid $deepOrange;
+            padding: 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+            h3{
+                font-size: 1.4rem;
+                color: $deepOrange;
+            }
+            .accord-add-icon{
+                font-size: 2rem;
+                color: $deepOrange;
+            }
+        }
+        .accordion-body{
             width: 100%;
             height: 100%;
-            .accordion-header{
-                width: 100%;
-                height: 40px;
-                border: 2px solid $deepOrange;
-                background-color: $linear-gradient;
-                padding: 10px;
-                box-sizing: border-box;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                h2{
-                    font-size: 1.4rem;
-                    color: $deepOrange;
-                }
-                .accordion-open-icon{
-                    font-size: 2.5rem;
-                    color: $deepOrange;
-                    font-weight: bold;
-                }
-            }   
-            .accordion-body{
-                max-height: 0;
-                background-color: $deepOrange;
-                transition: max-height 1s ease;
-                .body-content{
-                    padding: 10px;
+            padding: 10px;
+            background-color: $deepOrange;
+            box-sizing: border-box;
+            transition: height 0.6s ease;
+            margin-top: 10px;
+            p{
+                font-size: 1.4rem!important;
+                color: #ffff!important;
+            }
+            &.accordActive{
+                height: 0;
+                padding: 0;
+                p{
                     display: none;
-                    .body-text{
-                        font-size: 1.4rem;
-                        color: #ffff!important;
-                    }
-                }
-                &.accordActive{
-                    max-height: 100%;
                 }
             }
         }
