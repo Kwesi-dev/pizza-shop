@@ -33,10 +33,12 @@ const Navbar = () => {
                         <img src={pizzaSlice} alt="" className="nav-link-image"/>
                         <p>Restaurant</p>
                     </li>
-                    <li className="nav-link">
-                        <img src={pizzaSlice} alt="" className="nav-link-image"/>
-                        <p>Blog</p>
-                    </li>
+                    <NavLink to="/blog" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
+                        <li className="nav-link">
+                            <img src={pizzaSlice} alt="" className="nav-link-image"/>
+                            <p>Blog</p>
+                        </li>
+                    </NavLink>
                     <NavLink to="/contact" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
                         <li className="nav-link">
                             <img src={pizzaSlice} alt="" className="nav-link-image"/>

@@ -1,0 +1,65 @@
+@use "../../utils/globals" as *;
+.subscribe-container{
+    width: 100%;
+    height: 300px;
+    border: 2px dashed $deepOrange;
+    background: $linear-gradient;
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    .subscribe-left{
+        margin-right: 30px;
+        img{
+            width: 22rem;
+            height: 220px;
+            object-fit: contain;
+        }
+    }
+    .subscribe-right{
+        h1{
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+        p{
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .subscribe-btn{
+            width: 70%;
+            height: 40px;
+            border: 2px solid lightgray;
+            background-color: #ffff;
+            box-sizing: border-box;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            input{
+                flex: 2;
+                height: 80%;
+                border: none;
+                font-size: 1.5rem;
+                padding: 5px 10px 5px 15px;
+                box-sizing: border-box;
+                border-radius: 20px;
+
+            }
+            .subs-btn{
+                flex: 1;
+                height: 100%;
+                border-radius: 20px;
+                border: none;
+                background-color: $deepOrange;
+                color: #ffff;
+                font-size: 1.5rem;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+    }
+}

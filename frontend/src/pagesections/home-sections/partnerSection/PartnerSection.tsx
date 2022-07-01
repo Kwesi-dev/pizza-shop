@@ -4,7 +4,7 @@ import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import spizza from "../../../assets/images/spizzza.png"
+import SubscribeCard from "../../../components/subscribeCard/SubscribeCard";
 const PartnerSection = () => {
   return (
     <section className="partnerSection">
@@ -38,22 +38,8 @@ const PartnerSection = () => {
                 </div>
             </div>
             <div className="partner-brands">
-
             </div>
-            <div className="subscribe-container">
-                <div className="subscribe-left">
-                    <img src={spizza} alt="pizza-img" />
-                </div>
-                <div className="subscribe-right">
-                    <h1>subscribe for pizza offer</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis consequuntur saepe, ab illo explicabo illum quam nesciunt repudiandae</p>
-                    <div className="subscribe-btn">
-                        <input type="text" placeholder="Enter your email"/>
-                        <button className="subs-btn">subscribe</button>
-                    </div>
-                    <p>Exclusive offer every week!</p>
-                </div>
-            </div>
+            <SubscribeCard/>
         </div>
     </section>
   )
