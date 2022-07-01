@@ -9,7 +9,7 @@
         width: 80%;
         height: 100%;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         margin: 0 auto;
         justify-content: space-between;
         .navbar-logo{
@@ -38,14 +38,16 @@
 
                 .nav-link{
                     margin-right: 30px;
-                    display: flex;
-                    flex-direction: column;
+                    position: relative;
+                    list-style-type: none;
                     cursor: pointer;
                     .nav-link-image{
                         width: 15px;
                         height: 15px;
                         object-fit: cover;
                         display: none;
+                        position: absolute;
+                        top: -20px;
                     }
                     p{
                         font-size: 1.5rem;
@@ -56,13 +58,14 @@
                             color: $deepOrange;
                         }
                     }
-                    &.active{
-                        p{
-                            color: $deepOrange;
-                        }
-                        .nav-link-image{
-                            display: block;
-                        }
+                   
+                }
+                .nav-active{
+                    p{
+                        color: $deepOrange;
+                    }
+                    .nav-link-image{
+                        display: block;
                     }
                 }
             }
@@ -115,4 +118,8 @@
             }
         }
     }
+}
+.nav-bg-white{
+    @extend .navbar;
+    background: #fcfbf9;
 }

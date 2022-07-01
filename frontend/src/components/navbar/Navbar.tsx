@@ -3,9 +3,13 @@ import pizzaSlice from "../../assets/images/slice.png"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import "./navbar.scss";
+import { NavLink, useLocation } from "react-router-dom"
 const Navbar = () => {
+    const location = useLocation()
+    const path = location.pathname
+    console.log(path)
   return (
-    <div className="navbar">
+    <div className={path === "/" ? "navbar" : "navbar nav-bg-white"}>
         <div className="navbar-wrapper">
             <div className="navbar-logo">
                 <img src={logo} alt="" className="logo"/>
@@ -13,14 +17,18 @@ const Navbar = () => {
             </div>
             <nav className="nav-links">
                 <ul className="nav-links-container">
-                    <li className="nav-link">
-                        <img src={pizzaSlice} alt="" className="nav-link-image"/>
-                        <p>Home</p>
-                    </li>
-                    <li className="nav-link active">
-                        <img src={pizzaSlice} alt="" className="nav-link-image"/>
-                        <p>About</p>
-                    </li>
+                    <NavLink to="/" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
+                        <li className="nav-link">
+                            <img src={pizzaSlice} alt="" className="nav-link-image"/>
+                            <p>Home</p>
+                        </li>
+                    </NavLink>
+                    <NavLink to="/about" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
+                        <li className="nav-link">
+                            <img src={pizzaSlice} alt="" className="nav-link-image"/>
+                            <p>About</p>
+                        </li>
+                    </NavLink>
                     <li className="nav-link">
                         <img src={pizzaSlice} alt="" className="nav-link-image"/>
                         <p>Restaurant</p>
@@ -29,10 +37,12 @@ const Navbar = () => {
                         <img src={pizzaSlice} alt="" className="nav-link-image"/>
                         <p>Blog</p>
                     </li>
-                    <li className="nav-link">
-                        <img src={pizzaSlice} alt="" className="nav-link-image"/>
-                        <p>Contact</p>
-                    </li>
+                    <NavLink to="/contact" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
+                        <li className="nav-link">
+                            <img src={pizzaSlice} alt="" className="nav-link-image"/>
+                            <p>Contact</p>
+                        </li>
+                    </NavLink>
                 </ul>
             </nav>
             <div className="nav-last">
