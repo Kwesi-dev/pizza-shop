@@ -29,10 +29,12 @@ const Navbar = () => {
                             <p>About</p>
                         </li>
                     </NavLink>
-                    <li className="nav-link">
-                        <img src={pizzaSlice} alt="" className="nav-link-image"/>
-                        <p>Restaurant</p>
-                    </li>
+                    <NavLink to="/restaurants" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
+                        <li className="nav-link">
+                            <img src={pizzaSlice} alt="" className="nav-link-image"/>
+                            <p>Restaurants</p>
+                        </li>
+                    </NavLink>
                     <NavLink to="/blog" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
                         <li className="nav-link">
                             <img src={pizzaSlice} alt="" className="nav-link-image"/>

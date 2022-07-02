@@ -5,6 +5,10 @@ const ShopCard = () => {
   return (
     <article className="shopCard">
         <div className="shopCard-wrapper">
+            <div className="visit-shop-hover">
+                <p>visit</p>
+                <p>pizza shop</p>
+            </div>
             <div className="promo-container">
                 <span>25% OFF</span>
             </div>

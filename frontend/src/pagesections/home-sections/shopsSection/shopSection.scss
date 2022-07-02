@@ -26,7 +26,11 @@
                 background-color: #ffff;
                 padding: 5px 15px;
                 border-radius: 15px;
-
+                cursor: pointer;
+                transition: all 0.6s ease;
+                &:hover{
+                    background: $linear-gradient;
+                }
                 span{
                     font-size: 1.2rem;
                     color: $deepOrange;
