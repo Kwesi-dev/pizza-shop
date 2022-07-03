@@ -2,6 +2,7 @@ import "./restaurants.scss"
 import restpizzaImg2 from "../../assets/images/cardp.png"
 import ShopCard from "../../components/shopCard/ShopCard"
 import RotateRightOutlinedIcon from '@mui/icons-material/RotateRightOutlined';
+import GoToTop from "../../components/goToTop/GoToTop";
 const Restaurants = () => {
   return (
     <section className="restaurants">
@@ -60,6 +61,7 @@ const Restaurants = () => {
                 </button>
             </div>
         </div>
+        <GoToTop/>
     </section>
   )
 }
