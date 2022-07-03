@@ -12,7 +12,9 @@ const OfferCard = () => {
             <div className="more-actions">
                 <FavoriteBorderOutlinedIcon className="icon"/>
                 <GradeOutlinedIcon className="icon"/>
-                <SearchOutlined className="icon"/>
+                <Link to="product/1" className="link">
+                    <SearchOutlined className="icon"/>
+                </Link>    
             </div>
             <img src={pizzaImg} alt="" className="cardImage"/>
             <div className="card-info">
@@ -28,12 +30,10 @@ const OfferCard = () => {
                     <span>2</span>
                     <Remove className="remove"/>
                 </div>
-                <Link to="product/1" className="link">
-                    <button className="card-btn">
-                        <AddShoppingCartOutlined className="add-cart"/>
-                        <span>add to cart</span>
-                    </button>
-                </Link>
+                <button className="card-btn">
+                    <AddShoppingCartOutlined className="add-cart"/>
+                    <span>add to cart</span>
+                </button>
             </div>
         </div>
     </article>
