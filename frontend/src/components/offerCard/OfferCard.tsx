@@ -4,6 +4,7 @@ import pizzaImg from "../../assets/images/pizzaImg.png"
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import GradeOutlinedIcon from '@mui/icons-material/GradeOutlined';
 import SearchOutlined from '@mui/icons-material/SearchOutlined';
+import { Link } from "react-router-dom"
 const OfferCard = () => {
   return (
     <article className="offerCard">
@@ -27,10 +28,12 @@ const OfferCard = () => {
                     <span>2</span>
                     <Remove className="remove"/>
                 </div>
-                <button className="card-btn">
-                    <AddShoppingCartOutlined className="add-cart"/>
-                    <span>add to cart</span>
-                </button>
+                <Link to="product/1" className="link">
+                    <button className="card-btn">
+                        <AddShoppingCartOutlined className="add-cart"/>
+                        <span>add to cart</span>
+                    </button>
+                </Link>
             </div>
         </div>
     </article>

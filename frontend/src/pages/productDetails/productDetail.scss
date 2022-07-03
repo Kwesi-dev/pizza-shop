@@ -2,7 +2,7 @@
 .productDetails{
     width: 100%;
     height: 100%;
-
+    margin-top: 80px;
     &-wrapper{
         width: 80%;
         height: 100%;
@@ -156,10 +156,17 @@
                         .tags{
                             margin-left: 5px;
                             position: relative;
-                            span{
+                            padding: 0;
+
+                            li{
                                 color: $deepOrange;
                                 display: inline-block;
                                 margin-right: 5px;
+                                text-decoration: none;
+                                font-size: 1.5rem;
+                                span{
+                                    color: #000000;
+                                }
                             }
                         }
                     }

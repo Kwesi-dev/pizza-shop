@@ -3,6 +3,8 @@ import "./productDetail.scss"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Add, Remove } from "@mui/icons-material";
 import pizzaImg from "../../assets/images/pizzaDetailsLg.jpg"
+import ProductTabs from "../../components/productTabs/ProductTabs";
+import RelatedProducts from "../../pagesections/productDetailsSection/RelatedProducts/RelatedProducts";
 const ProductDetails = () => {
   return (
     <section className="productDetails">
@@ -54,15 +56,17 @@ const ProductDetails = () => {
                         </div>
                         <div className="product-bottom-detail">
                             <span>Tags : </span>
-                            <div className="tags">
-                                <span>pizza</span>
-                                <span>meat</span>
-                                <span>restaurant</span>
-                            </div>
+                            <ul className="tags">
+                                <li>pizza<span>,</span></li>
+                                <li>meat<span>,</span></li>
+                                <li>restaurant</li>
+                            </ul>
                         </div>
                     </div>
                 </div>    
             </div>
+            <ProductTabs/>
+            <RelatedProducts/>
         </div>
     </section>
   )
