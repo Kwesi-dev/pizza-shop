@@ -5,6 +5,7 @@ import { Add, Remove } from "@mui/icons-material";
 import pizzaImg from "../../assets/images/pizzaDetailsLg.jpg"
 import ProductTabs from "../../components/productTabs/ProductTabs";
 import RelatedProducts from "../../pagesections/productDetailsSection/RelatedProducts/RelatedProducts";
+import GoToTop from "../../components/goToTop/GoToTop";
 const ProductDetails = () => {
   return (
     <section className="productDetails">
@@ -68,6 +69,7 @@ const ProductDetails = () => {
             <ProductTabs/>
             <RelatedProducts/>
         </div>
+        <GoToTop/>
     </section>
   )
 }
