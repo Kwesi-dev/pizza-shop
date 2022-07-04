@@ -1,0 +1,55 @@
+@use "../../utils/globals" as *;
+.restaurantTabBar{
+    width: 380px;
+    height: 40px;
+    margin: auto;
+    -webkit-box-shadow: 5px 5px 15px -6px #000000; 
+    box-shadow: 5px 5px 15px -6px #000000;
+    border-radius: 10px;
+    background-color: #ffff;
+    box-sizing: border-box;
+    display: flex;
+
+    &-wrapper{
+        width: 80%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        .rest-tab{
+            width: fit-content;
+            height: 100%;
+            position: relative;
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            &::after{
+                content: "";
+                display: block;
+                height: 4px;
+                width: 100%;
+                background-color: $deepOrange;
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                display: none;
+            }
+            span{
+                font-size: 1.5rem;
+                font-weight: bold;
+                &:hover{
+                    color: $deepOrange;
+                }
+            }
+            &.active{
+                &::after{
+                    display: block;
+                }
+                span{
+                    color: $deepOrange;
+                }
+            }
+        }
+    }
+    
+}

@@ -1,9 +1,14 @@
 import GradeOutlined from "@mui/icons-material/GradeOutlined"
 import "./shopCard.scss"
 import shopImg from "../../assets/images/dishes4.jpg"
+import { useNavigate } from "react-router-dom"
 const ShopCard = () => {
+    const navigate = useNavigate()
+    const handleClick = () =>{
+        navigate("/restaurant/1")
+    }
   return (
-    <article className="shopCard">
+    <article className="shopCard" onClick={()=>handleClick()}>
         <div className="shopCard-wrapper">
             <div className="visit-shop-hover">
                 <p>visit</p>

@@ -9,6 +9,7 @@ import Contact from './pages/contact/Contact';
 import Blog from './pages/blog/Blog';
 import Restaurants from './pages/restaurants/Restaurants';
 import ProductDetails from './pages/productDetails/ProductDetails'
+import RestaurantDetails from './pages/restaurantDetails/RestaurantDetails';
 function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
             <Route path="/blog" element={<Blog/>}/>
             <Route path="/restaurants" element={<Restaurants/>}/>
             <Route path="/product/:id" element={<ProductDetails/>}/>
+            <Route path="/restaurant/:id" element={<RestaurantDetails/>}/>
           </Routes>
           </main>
         <footer>
