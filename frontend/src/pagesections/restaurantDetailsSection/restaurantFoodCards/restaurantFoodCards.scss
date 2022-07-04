@@ -1,0 +1,22 @@
+.restaurantFoodCards{
+    width: 100%;
+    height: 100%;
+
+    &-wrapper{
+        width: 100%;
+        height: 100%;
+
+        .first-grid{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .second-grid{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            
+        }
+    }
+}

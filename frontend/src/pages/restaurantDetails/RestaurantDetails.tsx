@@ -4,6 +4,8 @@ import PhoneInTalkOutlinedIcon from '@mui/icons-material/PhoneInTalkOutlined';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
 import restaurantImg from "../../assets/images/restaurantImg.jpg"
 import RestaurantTabBar from "../../components/restaurantTabbar/RestaurantTabBar";
+import GoToTop from "../../components/goToTop/GoToTop";
+import RestaurantFoodCards from "../../pagesections/restaurantDetailsSection/restaurantFoodCards/RestaurantFoodCards";
 const RestaurantDetails = () => {
   return (
     <section className="restaurantDetails">
@@ -32,7 +34,9 @@ const RestaurantDetails = () => {
                 </div>
             </div>
             <RestaurantTabBar/>
+            <RestaurantFoodCards/>
         </div>
+        <GoToTop/>
     </section>
   )
 }
