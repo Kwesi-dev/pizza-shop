@@ -3,7 +3,7 @@ import pizzaSlice from "../../assets/images/slice.png"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import "./navbar.scss";
-import { NavLink, useLocation } from "react-router-dom"
+import { Link, NavLink, useLocation } from "react-router-dom"
 const Navbar = () => {
     const location = useLocation()
     const path = location.pathname
@@ -55,10 +55,12 @@ const Navbar = () => {
                     <p className="order-telephone">+233 54 504 6757</p>
                 </div>
                 <div className="last-right">
-                    <div className="cart-container">
-                        <ShoppingCartOutlinedIcon className="cart-icon"/>
-                        <span>2</span>
-                    </div>
+                    <Link to="/cart" className="link">
+                        <div className="cart-container">
+                            <ShoppingCartOutlinedIcon className="cart-icon"/>
+                            <span>2</span>
+                        </div>
+                    </Link>
                     <SearchOutlinedIcon className="search-icon"/>
                 </div>
             </div>
