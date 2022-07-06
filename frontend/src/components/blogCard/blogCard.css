@@ -1,0 +1,101 @@
+@use "../../utils/globals" as *;
+.blogCard {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  background-image: url("../../assets//images/street.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.blogCard::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: block;
+  background-color: black;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.blogCard-wrapper {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 20px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.blogCard-wrapper .blogCard-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.blogCard-wrapper .blogCard-header img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.blogCard-wrapper .blogCard-header span {
+  font-size: 1.3rem;
+  color: #ffff;
+}
+
+.blogCard-wrapper .blogCard-title {
+  font-size: 1.4rem;
+  color: #ffff;
+  margin-bottom: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.blogCard-wrapper .blogCard-btn {
+  width: 100px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  background-color: transparent;
+  border: 1px solid #ffff;
+  padding: 5px 0;
+}
+
+.blogCard-wrapper .blogCard-btn span {
+  font-size: 1.3rem;
+  color: #ffff;
+}
+/*# sourceMappingURL=blogCard.css.map */
