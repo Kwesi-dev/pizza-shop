@@ -11,6 +11,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 50px;
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+            grid-template-columns: 1fr;
+        }
         .homeAbout-left{
             h1{
                 font-size: 2.8rem;
@@ -49,6 +56,9 @@
             justify-content: flex-end;
             position: relative;
             z-index: 1;
+            @include laptopSm{
+                justify-content: center;
+            }
             .right-designed-box{
                 z-index: -1;
                 width: 120%;
@@ -58,11 +68,19 @@
                 position: absolute;
                 right: -200px;
                 border-radius: 20px;
+                @include PhoneLarge{
+                   right: -100px;
+                } 
             }
             .right-img{
                 width:500px;
                 height: 500px;
                 object-fit: cover;
+                @include PhoneLarge{
+                    width: 120%;
+                    height: 120%;
+                    object-fit: contain;
+                } 
             }
             .call-container{
                 width: 220px;
@@ -79,6 +97,13 @@
                 z-index: 2;
                 padding: 20px;
                 box-sizing: border-box;
+                @include PhoneLarge{
+                    top: 80px;
+                    left: 0;
+                } 
+                @media screen and (max-width: 340px){
+                    top: 40px;
+                }
                 .call-icon{
                     font-size: 3rem;
                     color: $deepOrange;
@@ -110,7 +135,9 @@
                 z-index: 2;
                 padding: 20px;
                 box-sizing: border-box;
-
+                @media screen and (max-width: 340px){
+                    bottom: 40px;
+                }
                 img{
                     margin-right: 20px;
                     width: 30px;

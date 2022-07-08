@@ -26,6 +26,24 @@ const OfferSection = () => {
             <ArrowForwardIosOutlinedIcon className="arrow-icon right" onClick={SwipeRight}/>
             <div className="slider-card-container">        
                 <Swiper
+                    breakpoints={{
+                        320:{
+                            slidesPerView: 1,
+                            spaceBetween: 20
+                        },
+                        426:{
+                            slidesPerView: 2,
+                            spaceBetween: 20
+                        },
+                        900:{
+                            slidesPerView: 3,
+                            spaceBetween: 20
+                        },
+                        1116: {
+                            slidesPerView: 4,
+                            spaceBetween: 10
+                        }
+                    }}
                     slidesPerView={4}
                     spaceBetween={10} 
                     onInit={(ev:any)=>{

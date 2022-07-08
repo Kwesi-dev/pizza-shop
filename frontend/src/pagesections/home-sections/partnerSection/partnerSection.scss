@@ -8,7 +8,12 @@
         width: 80%;
         height: 100%;
         margin: auto;
-
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+        }
         .partner-header{
             width: 100%;
             display: flex;
@@ -31,6 +36,10 @@
             grid-template-columns: 1fr 1fr;
             gap: 30px;
             margin-top: 80px;
+            @include PhoneLarge{
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
             .partner-card{
                 width: 100%;
                 height: 250px;

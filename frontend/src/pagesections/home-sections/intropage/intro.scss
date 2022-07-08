@@ -3,7 +3,10 @@
     width: 100%;
     height: calc(100vh - 130px);
     background: $linear-gradient;
-
+    @media screen and (max-width: 700px){
+        height: 100%;
+        padding-bottom: 40px;
+    }
     &-wrapper{
         width: 80%;
         height: 100%;
@@ -11,8 +14,23 @@
         grid-template-columns: 1fr 1fr;
         margin: auto;
         align-items: center;
-
+        @media screen and (max-width: 700px){
+            grid-template-columns: 1fr;
+        }
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+        }
         .intro-left{
+            @media screen and (max-width: 700px){
+                margin-bottom: 30px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
             .delivery-info{
                 display: flex;
                 align-items: center;
@@ -38,11 +56,30 @@
                 .main-title{
                     font-size: 5rem;
                     font-weight: bold;
+                   
+                    @include laptopSm{
+                        font-size: 3.6rem;
+                    }
+                    @media screen and (max-width: 700px){
+                        text-align: center;
+                        font-size: 4rem;
+                    }
+                    @include PhoneLarge{
+                        font-size: 3rem;
+                    }
+                    
                 }
                 .second-title{
                     display: flex;
                     h1{
                         margin-right: 15px;
+                        @include laptopSm{
+                            margin-right: 10px;
+                        }
+                        @media screen and (max-width: 700px){
+                            text-align: center!important;
+                        }
+                        
                     }
                     .coloured{
                         color: $deepOrange;
@@ -55,6 +92,12 @@
                 .intro-text{
                     font-size: 1.5rem;
                     color: $lightBlue;
+                    @include laptopLarge{
+                        font-size: 1.4rem;
+                    }
+                    @media screen and (max-width: 700px){
+                        text-align: center!important;
+                    }
                 }
             }
             .intro-left-bottom{
@@ -72,10 +115,22 @@
             display: flex;
             align-items: center;
             justify-content: flex-end!important;
+            @media screen and (max-width: 700px){
+                justify-content: center!important;
+            }
             img{
                 width: 400px;
                 height: 400px;
                 object-fit: cover;
+                @include laptopSm{
+                    width: 320px;
+                    height: 320px;
+                }
+                @include PhoneLarge{
+                    width: 90%;
+                    height: 90%;
+                    object-fit: contain;
+                }
             }
         }
     }

@@ -14,6 +14,7 @@ const SubscribeCard = () => {
                 <input type="text" placeholder="Enter your email"/>
                 <button className="subs-btn">subscribe</button>
             </div>
+            <button className="mobile-subs-btn">subscribe</button>
             <p>Exclusive offer every week!</p>
         </div>
     </article>

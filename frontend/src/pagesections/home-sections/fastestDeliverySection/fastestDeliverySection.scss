@@ -18,6 +18,9 @@
                 font-weight: bold;
                 text-align: center;
                 text-transform: capitalize;
+                @include PhoneLarge{
+                    font-size: 2rem;
+                }
             }
             img{
                 width: 200px;
@@ -31,6 +34,9 @@
             grid-template-columns: 1fr 1fr;
             gap: 30px;
             overflow: hidden;
+            @include TabletLarge{
+                grid-template-columns: 1fr;           
+            }
             .delivery-grid-item{
                 width: 100%;
                 height: 100%;
@@ -52,6 +58,11 @@
                     height: 400px;
                     object-fit: contain;
                     margin-right: 40px;
+                    @include PhoneLarge{
+                        width: 100%;
+                        height: 100%;
+                        
+                    }
                 }
                 &.man{
                     display: flex;
@@ -70,6 +81,19 @@
                     box-sizing: border-box;
                     -webkit-box-shadow: 5px 5px 15px -6px #000000; 
                     box-shadow: 5px 5px 15px -6px #000000;
+                    @include laptopLarge{
+                        width: 95%;
+                    }
+                    @include laptopSm{
+                        width: 90%;
+                    }
+                    @include TabletLarge{
+                        margin: auto;
+                        margin-bottom: 20px;   
+                    }
+                    @include PhoneLarge{
+                        height: fit-content;
+                    }
                     .grid-item-left{
                         .delivery-card-icon{
                             color: $deepOrange;

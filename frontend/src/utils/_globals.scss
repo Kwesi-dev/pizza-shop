@@ -5,3 +5,34 @@ $deepBlue: #4d5464;
 $lightBlue: #5a5955;
 $lightPink: #fcfbf9;
 $linear-gradient: linear-gradient(90deg, rgba(252,245,239,1) 0%, rgba(252,245,239,1) 54%, rgba(252,251,249,1) 100%);
+
+@mixin laptopLarge {
+    @media screen and (max-width: 1115px){
+        @content;
+    }
+};
+@mixin laptopSm {
+    @media screen and (max-width: 900px){
+        @content;
+    }
+};
+@mixin TabletLarge {
+    @media screen and (max-width: 769px){
+        @content
+    }
+};
+@mixin TabletSm {
+    @media screen and (max-width: 600px){
+        @content
+    }
+};
+@mixin PhoneLarge {
+    @media screen and (max-width: 425px){
+        @content
+    }
+};
+@mixin PhoneSm {
+    @media screen and (max-width: 320px){
+        @content
+    }
+}

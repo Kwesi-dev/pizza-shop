@@ -12,6 +12,48 @@
         align-items: center;
         margin: 0 auto;
         justify-content: space-between;
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+        }
+        .nav-right-mobile{
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+            display: none;
+            @include TabletLarge{
+                display: block;
+            }
+            .menu-icon{
+                font-size: 3rem;
+                color: $deepBlue;
+                cursor: pointer;
+                margin-left: 10px;
+               
+            }
+            .cart-container-mobile{
+                display: none;
+                position: relative;
+                .cart-icon-mobile{
+                    font-size: 2rem;
+                }
+                span{
+                    background-color: $deepOrange;
+                    padding: 2px 8px;
+                    color: white;
+                    border-radius: 6px;
+                    position: absolute;
+                    left: 0;
+                    top: -20px;
+                    font-size: 1.1rem;
+                }
+                @include PhoneLarge{
+                    display: block;
+                }
+            }
+        }
         .navbar-logo{
             padding-bottom: 20px;
             display: flex;
@@ -27,11 +69,16 @@
                 font-size: 3rem;
                 color: $deepBlue;
                 letter-spacing: -1px;
+                @include laptopSm{
+                    font-size: 2.2rem;
+                }
             }
         }
         .nav-links{
             padding-bottom: 20px;
-
+            @include TabletLarge{
+                display: none;
+            }
             .nav-links-container{
                 display: flex;
                 align-items: center;
@@ -40,6 +87,9 @@
                     margin-right: 30px;
                     position: relative;
                     list-style-type: none;
+                    @include laptopSm{
+                        margin-right: 10px;
+                    }
                     cursor: pointer;
                     .nav-link-image{
                         width: 15px;
@@ -53,6 +103,9 @@
                         font-size: 1.5rem;
                         font-weight: 500;
                         color: $lightBlue;
+                        @include laptopSm{
+                            font-size: 1.4rem;
+                        }
 
                         &:hover{
                             color: $deepOrange;
@@ -73,6 +126,9 @@
         .nav-last{
             display: flex;
             padding-bottom: 20px;
+            @include PhoneLarge{
+                display: none;
+            }
             .last-left{
                 padding-right: 20px;
                 display: flex;

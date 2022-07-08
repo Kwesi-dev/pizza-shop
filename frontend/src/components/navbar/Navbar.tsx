@@ -4,6 +4,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import "./navbar.scss";
 import { Link, NavLink, useLocation } from "react-router-dom"
+import { Menu } from "@mui/icons-material";
 const Navbar = () => {
     const location = useLocation()
     const path = location.pathname
@@ -63,6 +64,15 @@ const Navbar = () => {
                     </Link>
                     <SearchOutlinedIcon className="search-icon"/>
                 </div>
+            </div>
+            <div className="nav-right-mobile">
+                <Link to="/cart" className="link">
+                    <div className="cart-container-mobile">
+                        <ShoppingCartOutlinedIcon className="cart-icon-mobile"/>
+                        <span>2</span>
+                    </div>
+                </Link>
+                <Menu className="menu-icon"/>
             </div>
         </div>
     </div>

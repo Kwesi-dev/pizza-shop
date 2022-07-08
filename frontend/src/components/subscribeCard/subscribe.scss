@@ -10,12 +10,18 @@
     border-radius: 20px;
     padding: 30px;
     box-sizing: border-box;
+    @include TabletLarge{
+        flex-direction: column;
+        padding: 10;
+        height: fit-content;
+    }
     .subscribe-left{
         margin-right: 30px;
         img{
             width: 22rem;
             height: 220px;
             object-fit: contain;
+            display: none;
         }
     }
     .subscribe-right{
@@ -24,6 +30,9 @@
             font-weight: bold;
             margin-bottom: 20px;
             text-transform: capitalize;
+            @include PhoneLarge{
+                font-size: 2rem;
+            }
         }
         p{
             font-size: 1.5rem;
@@ -39,6 +48,10 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            @include laptopSm{
+                width: 90%;
+            }
+           
             input{
                 flex: 2;
                 height: 80%;
@@ -47,6 +60,9 @@
                 padding: 5px 10px 5px 15px;
                 box-sizing: border-box;
                 border-radius: 20px;
+                @include PhoneLarge{
+                    width: 100%;
+                } 
 
             }
             .subs-btn{
@@ -58,11 +74,30 @@
                 color: #ffff;
                 font-size: 1.5rem;
                 font-weight: 600;
+                @include PhoneLarge{
+                    display: none;
+                }
                 cursor: pointer;
                 transition: all 0.6s ease;
                 &:hover{
                     background-color: black;
                 }
+            }
+        }
+        .mobile-subs-btn{
+            display: none;
+            width: 60%;
+            height: 30px;
+            border-radius: 20px;
+            border: none;
+            background-color: $deepOrange;
+            color: #ffff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 10px;
+            @include PhoneLarge{
+                display: block;
             }
         }
     }

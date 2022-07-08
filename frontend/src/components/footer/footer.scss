@@ -3,7 +3,9 @@
     width: 100%;
     height: 400px;
     background-color: #ffff;
-
+    @include TabletLarge{
+        height: 100%;
+    } 
     &-wrapper{
         width: 80%;
         height: 100%;
@@ -12,10 +14,17 @@
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+        }
         .footer-head{
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 20px;  
             img{
                 width: 40px;
                 height: 40px;
@@ -30,13 +39,25 @@
         .footer-links{
             display: flex;
             justify-content: space-between;
+            @include TabletLarge{
+                flex-direction: column;
+            } 
             .f-links-left{
                 display: flex;
                 flex-direction: column; 
+                @include TabletLarge{
+                    margin-bottom: 30px;
+                } 
                 .social-media-links{
                     display: flex;
                     padding: 0;
                     margin-bottom: 80px;
+                    @include PhoneLarge{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 20px;
+                        margin-bottom: 20px;
+                    } 
                     li{
                         list-style-type: none;
                         font-size: 1.5rem;
@@ -69,6 +90,9 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 gap: 40px;
+                @include PhoneLarge{
+                    grid-template-columns: 1fr;
+                } 
                 .link-grid{
                     h3{
                         font-size: 1.5rem;
@@ -106,10 +130,16 @@
             justify-content: space-between;
             align-items: center;
             margin-top: 50px;
+            @include TabletSm{
+                flex-direction: column;
+            } 
 
             p{
                 font-size: 1.4rem;
                 color: $lightBlue;
+                @include TabletSm{
+                    margin-bottom: 10px;
+                } 
                 em{
                     color: $deepOrange;
                     font-size: 1.4rem;

@@ -10,6 +10,10 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+    @include PhoneLarge{
+        height: fit-content;
+        padding: 30px 0;
+    }
     img{
         width: 400px;
         height: 400px;
@@ -18,6 +22,9 @@
         z-index: -1;
         top: -30px;
         right: -160px;
+        @include TabletLarge{
+            right: -230px;
+        }
     }
     .footer-title{
         margin-bottom: 30px;
@@ -27,6 +34,9 @@
             text-align: center;
             font-weight: bold;
             text-transform: capitalize;
+            @include PhoneLarge{
+                font-size: 2rem;
+            }
         }
     }
     p{
@@ -35,6 +45,10 @@
         margin-bottom: 20px;
         width: 50%;
         text-align: center;
+        @include PhoneLarge{
+            font-size: 1.3rem;
+            width: 70%;
+        }
     }
     .delivery-footer-button{
         color: #ffff;

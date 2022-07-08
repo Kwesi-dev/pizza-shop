@@ -8,7 +8,13 @@
         height: 100%;
         margin: auto;
         padding: 50px 0;
-
+        
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+        }
         .discount-info-bar{
             display: flex;
             align-items: center;
@@ -42,6 +48,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
+            @include laptopSm{
+                gap: 20px;
+            }
+            @include PhoneLarge{
+                grid-template-columns: 1fr;
+            }
         }
     }
 }
