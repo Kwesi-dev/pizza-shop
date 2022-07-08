@@ -18,42 +18,45 @@
         @include laptopSm{
             width: 90%;
         }
-        .nav-right-mobile{
-            display: flex;
-            align-items: center;
-            padding-bottom: 20px;
+        .nav-right-mobile-container{
             display: none;
             @include TabletLarge{
                 display: block;
             }
-            .menu-icon{
-                font-size: 3rem;
-                color: $deepBlue;
-                cursor: pointer;
-                margin-left: 10px;
-               
-            }
-            .cart-container-mobile{
-                display: none;
-                position: relative;
-                .cart-icon-mobile{
-                    font-size: 2rem;
+            .nav-right-mobile{
+                display: flex;
+                align-items: center;
+                padding-bottom: 20px;
+                .menu-icon{
+                    font-size: 3rem;
+                    color: $deepBlue;
+                    cursor: pointer;
+                    margin-left: 10px;
+                   
                 }
-                span{
-                    background-color: $deepOrange;
-                    padding: 2px 8px;
-                    color: white;
-                    border-radius: 6px;
-                    position: absolute;
-                    left: 0;
-                    top: -20px;
-                    font-size: 1.1rem;
-                }
-                @include PhoneLarge{
-                    display: block;
+                .cart-container-mobile{
+                    display: none;
+                    position: relative;
+                    .cart-icon-mobile{
+                        font-size: 2rem;
+                    }
+                    span{
+                        background-color: $deepOrange;
+                        padding: 2px 8px;
+                        color: white;
+                        border-radius: 6px;
+                        position: absolute;
+                        left: 0;
+                        top: -20px;
+                        font-size: 1.1rem;
+                    }
+                    @include PhoneLarge{
+                        display: block;
+                    }
                 }
             }
         }
+        
         .navbar-logo{
             padding-bottom: 20px;
             display: flex;

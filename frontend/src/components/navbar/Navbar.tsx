@@ -65,14 +65,16 @@ const Navbar = () => {
                     <SearchOutlinedIcon className="search-icon"/>
                 </div>
             </div>
-            <div className="nav-right-mobile">
-                <Link to="/cart" className="link">
-                    <div className="cart-container-mobile">
-                        <ShoppingCartOutlinedIcon className="cart-icon-mobile"/>
-                        <span>2</span>
-                    </div>
-                </Link>
-                <Menu className="menu-icon"/>
+            <div className="nav-right-mobile-container">
+                <div className="nav-right-mobile">
+                    <Link to="/cart" className="link">
+                        <div className="cart-container-mobile">
+                            <ShoppingCartOutlinedIcon className="cart-icon-mobile"/>
+                            <span>2</span>
+                        </div>
+                    </Link>
+                    <Menu className="menu-icon"/>
+                </div>
             </div>
         </div>
     </div>
