@@ -7,6 +7,12 @@
         width: 80%;
         height: 100%;
         margin: auto;
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+        }
 
         .restaurant-header{
             margin-top: 50px;
@@ -14,6 +20,9 @@
             h1{
                 font-size: 4rem;
                 margin-bottom: 10px;
+                @include PhoneLarge{
+                    font-size: 3rem;
+                }
             }
             .current-page{
                 display: flex;
@@ -32,6 +41,12 @@
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             margin-bottom: 100px;
+            @include TabletLarge{
+               gap: 20px;
+            }
+            @include PhoneLarge{
+                grid-template-columns: 1fr;
+            }
         }
         .restaurants-cards{
             width: 100%;
@@ -40,6 +55,15 @@
             gap: 20px;
             margin-bottom: 60px;
             margin-top: 40px;
+            @include laptopSm{
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @include TabletLarge{
+                grid-template-columns: 1fr 1fr;
+            }
+            @include PhoneLarge{
+                grid-template-columns: 1fr;
+            }
         }
         .load-shops-container{
             width: 100%;

@@ -7,13 +7,25 @@
         width: 80%;
         height: 100%;
         margin: auto;
-
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+        }
         .blog-header{
             margin-top: 50px;
             margin-bottom: 60px;
+            @include PhoneLarge{
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
             h1{
                 font-size: 4rem;
                 margin-bottom: 10px;
+                @include PhoneLarge{
+                    font-size: 3rem;
+                }
             }
             .current-page{
                 display: flex;
@@ -32,6 +44,12 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-bottom: 50px;
+            @include TabletLarge{
+                grid-template-columns: 1fr 1fr;
+            }
+            @include PhoneLarge{
+                grid-template-columns: 1fr;
+            }
         }
         .load-blogs-container{
             width: 100%;
