@@ -32,6 +32,9 @@
             top: 0;
             cursor: pointer;
             z-index: 2;
+            @include PhoneLarge{
+                display: none;
+            }
 
         }
         .left{

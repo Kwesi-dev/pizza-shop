@@ -5,10 +5,15 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import "./navbar.scss";
 import { Link, NavLink, useLocation } from "react-router-dom"
 import { Menu } from "@mui/icons-material";
-const Navbar = () => {
+
+type slideMenuProps = {
+    slideOpen: boolean,
+    setSlideOpen: React.Dispatch<React.SetStateAction<boolean>> 
+}
+
+const Navbar = ({slideOpen, setSlideOpen}: slideMenuProps) => {
     const location = useLocation()
     const path = location.pathname
-    console.log(path)
   return (
     <div className={path === "/" ? "navbar" : "navbar nav-bg-white"}>
         <div className="navbar-wrapper">
@@ -73,7 +78,7 @@ const Navbar = () => {
                             <span>2</span>
                         </div>
                     </Link>
-                    <Menu className="menu-icon"/>
+                    <Menu className="menu-icon" onClick={()=> setSlideOpen(true)}/>
                 </div>
             </div>
         </div>
