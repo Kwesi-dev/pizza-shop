@@ -8,7 +8,12 @@
         width: 80%;
         height: 100%;
         margin: auto;
-
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+        }
         .restaurantDetails-intro{
             width: 100%;
             display: grid;

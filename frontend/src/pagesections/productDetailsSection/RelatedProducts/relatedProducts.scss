@@ -1,14 +1,28 @@
+@use "../../../utils/globals" as *;
 .related-products{
     width: 100%;
     margin-bottom: 60px;
     h1{
         font-size: 3rem;
         font-weight: bold;
+        @include PhoneLarge{
+            font-size: 2rem;
+        }
     }
     .related-products-container{
         width: 100%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
+        @include laptopLarge{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include laptopSm{
+            grid-template-columns: 1fr 1fr;
+        }
+        @include PhoneLarge{
+            grid-template-columns: 1fr;
+            
+        }
     }
 }
