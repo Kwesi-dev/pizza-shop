@@ -1,0 +1,17 @@
+@use ".././../utils/globals" as *;
+.restTabbarMobile{
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+
+    &-topbar{
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        -webkit-box-shadow: 5px 5px 15px -6px #000000; 
+        box-shadow: 5px 5px 15px -6px #000000;
+    }
+}

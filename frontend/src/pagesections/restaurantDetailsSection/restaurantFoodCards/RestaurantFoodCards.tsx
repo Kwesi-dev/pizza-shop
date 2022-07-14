@@ -1,9 +1,8 @@
-import OfferCard from "../../../components/offerCard/OfferCard"
-import FoodCardH from "../../../components/restFoodCard/FoodCardH"
 import "./restaurantFoodCards.scss"
 import ReactPaginate from 'react-paginate';
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import RestaurantPizzaCard from "../../../components/restaurantPizzaCard/RestaurantPizzaCard";
 type cardstype = {
     id : number
 }
@@ -114,30 +113,10 @@ const RestaurantFoodCards = () => {
             <div className="second-grid">
                 {
                     currentItems.map((c)=>
-                        <OfferCard/>
+                        <RestaurantPizzaCard/>
                     )
                 }
             </div>
-            {/* <div className="first-grid">
-                <FoodCardH/>
-                <FoodCardH/>
-            </div>
-            <div className="second-grid">
-                <OfferCard/>
-                <OfferCard/>
-                <OfferCard/>
-                <OfferCard/>
-            </div>
-            <div className="first-grid">
-                <FoodCardH/>
-                <FoodCardH/>
-            </div>
-            <div className="second-grid">
-                <OfferCard/>
-                <OfferCard/>
-                <OfferCard/>
-                <OfferCard/>
-            </div> */}
             <ReactPaginate
                 onPageChange={handlePageClick}
                 breakLabel="..."

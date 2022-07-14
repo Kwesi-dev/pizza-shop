@@ -86,7 +86,17 @@
             width: 100%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 30px;
+
+            @include laptopSm{
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @include TabletLarge{
+                grid-template-columns: 1fr 1fr;
+            }
+            @include PhoneLarge{
+                grid-template-columns: 1fr;
+            }
         }
     }
 }

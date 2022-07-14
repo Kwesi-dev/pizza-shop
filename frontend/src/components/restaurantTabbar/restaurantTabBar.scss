@@ -10,6 +10,9 @@
     box-sizing: border-box;
     display: flex;
 
+    @include PhoneLarge{
+        display: none;
+    }
     &-wrapper{
         width: 80%;
         height: 100%;

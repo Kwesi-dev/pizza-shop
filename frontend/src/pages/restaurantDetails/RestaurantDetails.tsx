@@ -6,6 +6,7 @@ import restaurantImg from "../../assets/images/restaurantImg.jpg"
 import RestaurantTabBar from "../../components/restaurantTabbar/RestaurantTabBar";
 import GoToTop from "../../components/goToTop/GoToTop";
 import RestaurantFoodCards from "../../pagesections/restaurantDetailsSection/restaurantFoodCards/RestaurantFoodCards";
+import RestaurantTabbarMobile from "../../components/restaurantTabbarMobile/RestaurantTabbarMobile";
 const RestaurantDetails = () => {
   return (
     <section className="restaurantDetails">
@@ -34,6 +35,7 @@ const RestaurantDetails = () => {
                 </div>
             </div>
             <RestaurantTabBar/>
+            <RestaurantTabbarMobile/>
             <RestaurantFoodCards/>
         </div>
         <GoToTop/>
