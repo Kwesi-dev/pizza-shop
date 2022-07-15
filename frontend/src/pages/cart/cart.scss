@@ -7,18 +7,32 @@
         width: 80%;
         height: 100%;
         margin: auto;
-
+        @include laptopLarge{
+            width: 95%;
+        }
+        @include laptopSm{
+            width: 90%;
+        }
         .cart-header{
             margin-top: 40px;
             margin-bottom: 80px;
+            @include PhoneLarge{
+                margin-top: 20px;
+            }
             h1{
                 font-size: 4rem;
                 margin-bottom: 10px;
+                @include PhoneLarge{
+                    font-size: 2rem;
+                }
             }
             .current-page{
                 display: flex;
                 h3{
                     font-size: 1.5rem;
+                    @include PhoneLarge{
+                        font-size: 1.4rem;
+                    }   
                     &:last-child{
                         color: $deepOrange;
                         margin-left: 5px;
@@ -32,8 +46,14 @@
             grid-template-columns: 2fr 1fr;
             gap: 40px;
 
+            @include TabletLarge{
+                grid-template-columns: 1fr;
+            }
             .cart-body-left{
                 width: 100%;
+                @include PhoneLarge{
+                    display: none;
+                }
                 table{
                     width: 100%;
                     border-collapse: collapse;

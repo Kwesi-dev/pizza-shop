@@ -1,0 +1,63 @@
+@use "../../utils/globals" as *;
+.cartMobile{
+    width: 100%;
+    &-product{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        .cartMobile-info{
+            flex: 3;
+            .info-top{
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: space-between;
+                h2{
+                    font-size: 1.4rem;
+                }
+                .close{
+                    padding: 2px;
+                    border-radius: 50%;
+                    background-color: $lightOrange;
+                    color: $deepOrange;
+                    cursor: pointer;
+                }
+            } 
+            .info-bottom{
+                display: flex;
+                justify-content: space-between;
+    
+                .price{
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+                .amount-container{
+                    display: flex;
+                    align-items: center;
+                    .add{
+                        border: 1px solid $deepOrange;
+                        padding: 2px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        margin-right: 10px;
+                        background-color: #ffff;
+                    }
+                    span{
+                        font-size: 1.2rem;
+                    }
+                    .remove{
+                        @extend .add;
+                        margin-left: 10px;
+                    }
+                }
+            }  
+        }
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-right: 20px;
+        flex: 1;
+    }
+}

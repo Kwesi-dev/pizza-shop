@@ -2,7 +2,7 @@ import "./cart.scss"
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import { Add, Close, Remove } from '@mui/icons-material'
 import productImg from "../../assets/images/pizzaImg.png"
-import productImg1 from "../../assets/images/spizzza.png"
+import CartMobile from "../../components/cartMobile/CartMobile";
 
 const Cart = () => {
   return (
@@ -16,6 +16,7 @@ const Cart = () => {
                 </div>
             </header>
             <div className="cart-body">
+                <CartMobile/>
                 <div className="cart-body-left">
                     <table>
                         <thead>
