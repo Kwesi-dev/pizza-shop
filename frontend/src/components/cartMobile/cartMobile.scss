@@ -1,6 +1,10 @@
 @use "../../utils/globals" as *;
 .cartMobile{
     width: 100%;
+    display: none;
+    @include PhoneLarge{
+        display: block;
+    }
     &-product{
         width: 100%;
         display: flex;
@@ -9,7 +13,7 @@
         .cartMobile-info{
             flex: 3;
             .info-top{
-                margin-bottom: 30px;
+                margin-bottom: 20px;
                 display: flex;
                 justify-content: space-between;
                 h2{
@@ -56,8 +60,8 @@
     img{
         width: 100px;
         height: 100px;
-        object-fit: cover;
-        margin-right: 20px;
+        object-fit: contain;
+        margin-right: 10px;
         flex: 1;
     }
 }
