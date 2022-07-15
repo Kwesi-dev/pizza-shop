@@ -71,6 +71,9 @@
                     text-transform: capitalize;
                     font-size: 3rem;
                     margin-bottom: 30px;
+                    @include PhoneLarge{
+                        font-size: 1.8rem;
+                    }
                 }
                 .info-item{
                     display: flex;
@@ -81,11 +84,17 @@
                         color: $deepOrange;
                         font-size: 3rem;
                         font-weight: bold;
-                        margin-right: 20px;
+                        margin-right: 10px;
+                        @include PhoneLarge{
+                            font-size: 2.2rem;
+                        }
                     }
                     span{
                         font-size: 1.6rem;
                         color: $deepBlue;
+                        @include PhoneLarge{
+                            font-size: 1.4rem;
+                        }
                     }
                 }
             }
