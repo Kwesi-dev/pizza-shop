@@ -12,13 +12,15 @@ import ProductDetails from './pages/productDetails/ProductDetails'
 import RestaurantDetails from './pages/restaurantDetails/RestaurantDetails';
 import Cart from './pages/cart/Cart';
 import SlideMenu from './components/sliderMenu/SlideMenu';
+import Login from './pages/login/Login';
 function App() {
   const [slideOpen, setSlideOpen] = useState(false)
+  const pathname = window.location.pathname
   return (
     <Router>
       <div className="App">
         <SlideMenu slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
-        <header className="App-header">
+        <header className={pathname === "/login" || pathname === "/register" ? "App-header display-none": "App-header"}>
             <Navbar slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
         </header>
           <main>
@@ -31,9 +33,10 @@ function App() {
               <Route path="/product/:id" element={<ProductDetails/>}/>
               <Route path="/restaurant/:id" element={<RestaurantDetails/>}/>
               <Route path="/cart" element={<Cart/>}/>
-            </Routes>
+              <Route path="/login" element={<Login/>}/>
+            </Routes> 
           </main>
-        <footer>
+        <footer className={pathname === "/login" || pathname === "/register" ? "App-header display-none": "App-header"}>
             <Footer/>
         </footer>
       </div>
