@@ -5,16 +5,24 @@ import LockIcon from '@mui/icons-material/Lock';
 import PersonIcon from '@mui/icons-material/Person';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import facebooklogo from "../../assets/images/facebook.png"
 import googlelogo from "../../assets/images/google.png"
 import twitterlogo from "../../assets/images/twitter.png"
 import backgroundImg from "../../assets/images/background.png"
 import { Link } from "react-router-dom";
-const Login = () => {
+
+type loginProps =  {
+  setShowNav:  React.Dispatch<React.SetStateAction<boolean>>
+}
+const Login = ({ setShowNav }: loginProps) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [passwordVisible, setPasswordVisible] = useState<boolean>(false)
+
+  useEffect(()=>{
+    setShowNav(false)
+  }, [setShowNav])
   return (
     <div className="login">
         <img src={backgroundImg} alt="" className="background" />
@@ -70,7 +78,7 @@ const Login = () => {
                       <div className="social-logo-container">
                         <img src={facebooklogo} alt="" className="social-logo"/>
                       </div>
-                      <div className="social-logo-container">
+                      <div className="social-logo-container twitter-logo">
                         <img src={twitterlogo} alt="" className="social-logo"/>
                       </div>
                     </div>

@@ -10,7 +10,11 @@ import twitterlogo from "../../assets/images/twitter.png"
 import backgroundImg from "../../assets/images/background.png"
 import "./register.scss"
 import { Link } from "react-router-dom";
-const Register = () => {
+
+type registerProps =  {
+    setShowNav:  React.Dispatch<React.SetStateAction<boolean>>
+  }
+const Register = ({ setShowNav }: registerProps) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")

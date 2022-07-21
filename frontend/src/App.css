@@ -4,6 +4,11 @@
   background-color: #fcfbf9;
 }
 
+.App .display-none {
+  display: none;
+  visibility: hidden;
+}
+
 .App .link {
   text-decoration: none;
   color: inherit;
