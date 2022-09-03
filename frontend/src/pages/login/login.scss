@@ -38,6 +38,12 @@
         @include laptopSm{
             width: 60%;
         }
+        @include TabletSm{
+            width: 90%;
+        }
+        @include PhoneLarge{
+            padding: 40px 20px;
+        }
         &-header{
             width: 100%;
             display: flex;
@@ -145,10 +151,19 @@
                         padding: 4px 10px;
                         box-sizing: border-box;
                         position: relative;
+                        @include PhoneLarge{
+                            height: 40px;
+                            padding: 4px;
+                        }
+                        
                         .input-icon{    
                             font-size: 2.4rem;
                             color: $deepBlue;
                             margin-right: 20px;
+                            @include PhoneLarge{
+                                margin-right: 5px;
+                                font-size: 2rem;
+                            }
                         }
                         input{
                             height: 100%;

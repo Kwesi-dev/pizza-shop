@@ -33,8 +33,7 @@ function App() {
       setShowNav(true)
     }
   }, [pathname])
-  const user: User = false
-  console.log(showNav);
+  const user: User = true
   return (
     <Router>
       <div className="App">
@@ -54,8 +53,8 @@ function App() {
               <Route path="/product/:id" element={<ProductDetails/>}/>
               <Route path="/restaurant/:id" element={<RestaurantDetails/>}/>
               <Route path="/cart" element={user ? <Cart/> : <Navigate to="/login"/>}/>
-              <Route path="/login" element={!user ? <Login setShowNav={setShowNav}/> : <Navigate to="/"/>}/>
-              <Route path="/register" element={!user ? <Register setShowNav={setShowNav}/>: <Navigate to="/"/>}/>
+              <Route path="/login" element={<Login setShowNav={setShowNav}/>}/>
+              <Route path="/register" element={<Register setShowNav={setShowNav}/>}/>
             </Routes> 
           </main>
           {showNav === true &&

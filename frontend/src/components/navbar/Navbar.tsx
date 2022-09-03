@@ -68,6 +68,11 @@ const Navbar = ({slideOpen, setSlideOpen}: slideMenuProps) => {
                         </div>
                     </Link>
                     <SearchOutlinedIcon className="search-icon"/>
+                    <NavLink to="/login" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
+                        <li className="nav-link">
+                            <p>Login</p>
+                        </li>
+                    </NavLink>
                 </div>
             </div>
             <div className="nav-right-mobile-container">

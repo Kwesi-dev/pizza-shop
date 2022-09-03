@@ -154,6 +154,31 @@
                 display: flex;
                 align-items: flex-end;
                 position: relative;
+                .nav-link{
+                    margin-left: 10px;
+                    position: relative;
+                    list-style-type: none;
+                    @include laptopSm{
+                        margin-right: 10px;
+                    }
+                    @include TabletLarge{
+                        display: none;
+                    }
+                    cursor: pointer;
+                    p{
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        color: $lightBlue;
+                        @include laptopSm{
+                            font-size: 1.4rem;
+                        }
+
+                        &:hover{
+                            color: $deepOrange;
+                        }
+                    }
+                   
+                }
                 .cart-icon{
                     color: $lightBlue;
                     margin-right: 10px;

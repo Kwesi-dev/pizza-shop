@@ -39,6 +39,16 @@ const SlideMenu = ({slideOpen, setSlideOpen}: slideMenuProps) => {
                         <p>Contact</p>
                     </li>
                 </NavLink>
+                <NavLink to="/register" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
+                    <li className="nav-link">
+                        <p>Register</p>
+                    </li>
+                </NavLink>
+                <NavLink to="/login" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
+                    <li className="nav-link">
+                        <p>Login</p>
+                    </li>
+                </NavLink>
             </ul>
         </nav>
     </div>
