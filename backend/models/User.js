@@ -9,6 +9,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+    oAuth: {
+        type: Boolean,
+        default: false
     }
 }, {timestamps: true})
-module.exports = mongoose.Model(User, UserSchema)
+
+module.exports = mongoose.model("User", UserSchema)
