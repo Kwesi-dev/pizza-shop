@@ -12,7 +12,8 @@ import "./register.scss"
 import { Link } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { axiosInstance } from "../../http/axiosRequests";
-
+import loadingGif from "../../assets/gifs/loading.gif"
+import { useNavigate } from "react-router-dom"
 type formInputs = {
   email: string,
   password: string,
@@ -21,6 +22,7 @@ type registerProps =  {
     setShowNav:  React.Dispatch<React.SetStateAction<boolean>>
   }
 const Register = ({ setShowNav }: registerProps) => {
+  const [loading, setLoading ] = useState(false)
   const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful, dirtyFields } } = useForm<formInputs>({
     defaultValues:{
       email: "",
@@ -28,7 +30,9 @@ const Register = ({ setShowNav }: registerProps) => {
     }
   })
   const [passwordVisible, setPasswordVisible] = useState<boolean>(false)
-  
+  const [ errorMessage, setErrorMessage ] = useState("")
+  const navigate = useNavigate()
+
   useEffect(() => {
     if(isSubmitSuccessful){
       reset()
@@ -36,11 +40,14 @@ const Register = ({ setShowNav }: registerProps) => {
   }, [isSubmitSuccessful, reset])
 
   const onSubmit: SubmitHandler<formInputs> = async (data) => {
+    setLoading(true)
     try{
-      const res = await axiosInstance.post("/auth/register", data)
-      console.log("res", res);
-    }catch(err){
-      console.log(err)
+      await axiosInstance.post("/auth/register", data)
+      setLoading(false)
+      navigate("/login")
+    }catch(err: any){
+      setLoading(false)
+      setErrorMessage(err?.response?.data?.message)
     }  
 
   }
@@ -111,8 +118,10 @@ const Register = ({ setShowNav }: registerProps) => {
                     </div> */}
                     <div className="form-buttons">
                       <button className="register-btn">Register</button>
+                      {loading && <img src={loadingGif} alt="loading gif" className="loadinggif"/>}
                     </div>
                 </form>
+                {errorMessage.length > 0 && <p className="errorMessage">{errorMessage}</p>}
                 <div className="social-logins">
                     <p>Login with</p>
                     <div className="social-register-icons">

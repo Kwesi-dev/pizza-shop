@@ -135,6 +135,11 @@
                         }
                     }
                 }
+                .errorMessage{
+                    font-size: 1.6rem;
+                    margin-top: 10px;
+                    color: red;
+                }
                 form{
                     width: 100%;
                     .input-group-container{
@@ -207,6 +212,11 @@
                         @media screen and (max-width: 755px){
                             flex-direction: column;
                             margin-top: 20px;
+                        }
+                        .loadinggif{
+                            width: 40px;
+                            height: 40px;
+                            object-fit: contain;
                         }
                         .register-btn{
                             width: 180px;

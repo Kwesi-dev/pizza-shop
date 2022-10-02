@@ -139,48 +139,73 @@
                         }
                     }
                 }
+                .errorMessage{
+                    font-size: 1.6rem;
+                    margin-top: 10px;
+                    color: red;
+                }
                 form{
                     width: 100%;
-                    .input-group{
-                        margin-bottom: 30px;
-                        width: 100%;
-                        height: 45px;
-                        border: 2px solid $deepBlue;
-                        display: flex;
-                        align-items: center;
-                        padding: 4px 10px;
-                        box-sizing: border-box;
-                        position: relative;
-                        @include PhoneLarge{
-                            height: 40px;
-                            padding: 4px;
+                    .input-group-container{
+                        margin-bottom: 20px;
+                        .error{
+                            color: red;
+                            font-size: 1.4rem;
                         }
-                        
-                        .input-icon{    
-                            font-size: 2.4rem;
-                            color: $deepBlue;
-                            margin-right: 20px;
-                            @include PhoneLarge{
-                                margin-right: 5px;
-                                font-size: 2rem;
-                            }
-                        }
-                        input{
-                            height: 100%;
+                        .input-group{
                             width: 100%;
-                            padding: 4px 8px;
+                            height: 45px;
+                            border: 2px solid $deepBlue;
+                            display: flex;
+                            align-items: center;
+                            padding: 4px 10px;
                             box-sizing: border-box;
-                            font-size: 1.5rem;
-                            border: none;
-                            &:focus{
-                                outline: none;
+                            position: relative;
+                            @include PhoneLarge{
+                                height: 40px;
+                                padding: 4px;
                             }
-                        }
-                        .visible-icon{
-                            position: absolute;
-                            right: 20px;
-                            font-size: 2.4rem!important;
-                            cursor: pointer;
+                            &.input-error{
+                                border-color: red;
+                                .input-icon{
+                                    color: red;
+                                }
+                                input{
+                                    color: red;
+                                    &::placeholder{
+                                        color: red;
+                                    }
+                                }
+                                .visible-icon{
+                                    color: red;
+                                }
+                            }
+                            .input-icon{    
+                                font-size: 2.4rem;
+                                color: $deepBlue;
+                                margin-right: 20px;
+                                @include PhoneLarge{
+                                    margin-right: 5px;
+                                    font-size: 2rem;
+                                }
+                            }
+                            input{
+                                height: 100%;
+                                width: 100%;
+                                padding: 4px 8px;
+                                box-sizing: border-box;
+                                font-size: 1.5rem;
+                                border: none;
+                                &:focus{
+                                    outline: none;
+                                }
+                            }
+                            .visible-icon{
+                                position: absolute;
+                                right: 20px;
+                                font-size: 2.4rem!important;
+                                cursor: pointer;
+                            }
                         }
                     }
                     .form-buttons{
@@ -214,6 +239,11 @@
                             &:hover{
                                 background-color: $lightOrange;
                             }
+                        }
+                        .loadinggif{
+                            width: 30px;
+                            height: 30px;
+                            object-fit: contain;
                         }
                         .forgot-btn{
                             font-size: 1.5rem;
