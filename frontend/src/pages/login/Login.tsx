@@ -5,7 +5,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import PersonIcon from '@mui/icons-material/Person';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import facebooklogo from "../../assets/images/facebook.png"
 import googlelogo from "../../assets/images/google.png"
 import twitterlogo from "../../assets/images/twitter.png"
@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { axiosInstance } from "../../http/axiosRequests";
 import loadingGif from "../../assets/gifs/loading.gif"
+import { AuthContext, loginFailed, loginStart, loginSuccess } from "../../context/AuthContext"
 
 type formInputs = {
   email: string,
@@ -25,34 +26,37 @@ type loginProps =  {
 }
 const Login = ({ setShowNav }: loginProps) => {
   const [passwordVisible, setPasswordVisible] = useState<boolean>(false)
-  const [loading, setLoading] = useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState("")
-  const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful, dirtyFields }} = useForm({
+  const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful, dirtyFields, }} = useForm({
     defaultValues:{
       email: "",
       password: ""
     }
   })
+  const { state, dispatch } = useContext(AuthContext)
 
   useEffect(() => {
-    if(isSubmitSuccessful){
+    if(isSubmitSuccessful && errorMessage === ""){
       reset()
     }
-  },[isSubmitSuccessful, reset])
+    if(isSubmitSuccessful && errorMessage.length > 0 ){
+      reset()
+    }
+  },[isSubmitSuccessful, reset, errorMessage])
 
   useEffect(()=>{
     setShowNav(false)
   }, [setShowNav])
 
   const onSubmit : SubmitHandler<formInputs> = async ( data ) => {
-    setLoading(true)  
+    dispatch({ type: "loginStart"})  
     try{
-        await axiosInstance.post("/auth/login", data)
-        setLoading(false)
+        const res = await axiosInstance.post("/auth/login", data)
+        console.log(res)
+        dispatch({type: "loginSuccess", payload: res.data})
     }catch(err: any){
-      console.log(err?.response?.data?.message)
       setErrorMessage(err?.response?.data?.message)
-      setLoading(false)
+      dispatch({ type: "loginFailed"})
     }
   }
   return (
@@ -106,7 +110,7 @@ const Login = ({ setShowNav }: loginProps) => {
                       <button className="login-btn" type="submit">
                         login 
                       </button>
-                      {loading && <img src={loadingGif} alt="loading gif" className="loadinggif"/>}
+                      {state.isFetching && <img src={loadingGif} alt="loading gif" className="loadinggif"/>}
                       <button className="forgot-btn">forgot password</button>
                     </div>
                 </form>

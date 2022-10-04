@@ -6,7 +6,7 @@ export const loginStart = () => ({
     type: "loginStart"
 })
 
-export const loginSuccess = ( user : {}) => (
+export const loginSuccess = ( user : {} ) => (
     {
         type: "LoginSuccess",
         payload: user
@@ -20,18 +20,18 @@ export const loginFailed = () => ({
 
 //reducer
 type initialStateTypes = {
-    user: {} | null,
+    user: {},
     isFetching: boolean,
     error: boolean,
 }
 
-type actionTypes = { type: "loginStart"} | { type: "loginSuccess", payload: {}} | { type: "loginFailed"}
+type actionTypes = | { type: "loginStart"} | { type: "loginSuccess"; payload: {}} | { type: "loginFailed"}
 const reducer = ( state: initialStateTypes, action: actionTypes ) => {
     switch(action.type){
        case "loginStart" : 
             return{
                 ...state,
-                user: null,
+                user: {},
                 isFetching: true,
                 error: false 
             };
@@ -45,7 +45,7 @@ const reducer = ( state: initialStateTypes, action: actionTypes ) => {
         case "loginFailed" : 
             return{
                 ...state,
-                user: null,
+                user: {},
                 isFetching: false,
                 error: false 
             };
@@ -57,7 +57,7 @@ const reducer = ( state: initialStateTypes, action: actionTypes ) => {
 //context
 
 const initialState : initialStateTypes = {
-    user: null || JSON.parse(localStorage.getItem('user') || '{}'),
+    user: JSON.parse(localStorage.getItem('user') || '{}'),
     isFetching: false,
     error: false,
 }

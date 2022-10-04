@@ -4,7 +4,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import "./navbar.scss";
 import { Link, NavLink, useLocation } from "react-router-dom"
-import { Menu } from "@mui/icons-material";
+import { Menu } from "@mui/icons-material"; 
 
 type slideMenuProps = {
     slideOpen: boolean,

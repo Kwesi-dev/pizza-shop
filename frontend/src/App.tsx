@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import './App.scss';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
@@ -14,13 +14,15 @@ import Cart from './pages/cart/Cart';
 import SlideMenu from './components/sliderMenu/SlideMenu';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import AuthContextProvider, { AuthContext } from "./context/AuthContext"
 
-type User = boolean
 
 function App() {
   const [slideOpen, setSlideOpen] = useState(false)
   const [showNav, setShowNav] = useState(true)
   const pathname = window.location.pathname
+  const { state } = useContext(AuthContext)
+  const user = Object.keys(state.user).length === 0 ? false : true 
 
   useEffect(()=>{
     if(pathname === "/login"){
@@ -33,36 +35,41 @@ function App() {
       setShowNav(true)
     }
   }, [pathname])
-  const user: User = true
   return (
     <Router>
-      <div className="App">
-        <SlideMenu slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
-          {showNav === true &&
-            <header>
-                <Navbar slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
-            </header>
-          }
-          <main>
-            <Routes>
-              <Route path="/" element={<Home/>}/>
-              <Route path="/about" element={<About/>}/>
-              <Route path="/contact" element={<Contact/>}/>
-              <Route path="/blog" element={<Blog/>}/>
-              <Route path="/restaurants" element={<Restaurants/>}/>
-              <Route path="/product/:id" element={<ProductDetails/>}/>
-              <Route path="/restaurant/:id" element={<RestaurantDetails/>}/>
-              <Route path="/cart" element={user ? <Cart/> : <Navigate to="/login"/>}/>
-              <Route path="/login" element={<Login setShowNav={setShowNav}/>}/>
-              <Route path="/register" element={<Register setShowNav={setShowNav}/>}/>
-            </Routes> 
-          </main>
-          {showNav === true &&
-            <footer>
-                <Footer/>
-            </footer>
-          }
-      </div>
+      <AuthContextProvider>
+        <div className="App">
+          <SlideMenu slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
+            {showNav === true &&
+              <header>
+                  <Navbar slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
+              </header>
+            }
+            <main>
+              <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/blog" element={<Blog/>}/>
+                <Route path="/restaurants" element={<Restaurants/>}/>
+                <Route path="/product/:id" element={<ProductDetails/>}/>
+                <Route path="/restaurant/:id" element={<RestaurantDetails/>}/>
+                <Route path="/cart" element={user ? <Cart/> : <Navigate to="/login"/>}/>
+                {!user &&
+                  <>
+                    <Route path="/login" element={<Login setShowNav={setShowNav}/>}/>
+                    <Route path="/register" element={<Register setShowNav={setShowNav}/>}/>
+                  </> 
+                }
+              </Routes> 
+            </main>
+            {showNav === true &&
+              <footer>
+                  <Footer/>
+              </footer>
+            }
+        </div>
+      </AuthContextProvider>
     </Router>
   );
 }
