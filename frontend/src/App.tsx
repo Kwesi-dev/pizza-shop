@@ -22,28 +22,19 @@ function App() {
   const [showNav, setShowNav] = useState(true)
   const pathname = window.location.pathname
   const { state } = useContext(AuthContext)
-  const user = Object.keys(state.user).length === 0 ? false : true 
-
-  useEffect(()=>{
-    if(pathname === "/login"){
-      setShowNav(false)
-    }
-    else if(pathname === "/register"){
-      setShowNav(false)
-    }
-    else{
-      setShowNav(true)
-    }
-  }, [pathname])
+  const user = state.user
+  const pathnames = ["/login", "/register"]
+  console.log(pathnames.includes(pathname))
+  console.log(pathname)
   return (
     <Router>
       <AuthContextProvider>
         <div className="App">
           <SlideMenu slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
-            {showNav === true &&
-              <header>
-                  <Navbar slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
-              </header>
+            {pathnames.includes(pathname) ? "" :
+                <header>
+                    <Navbar slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
+                </header>
             }
             <main>
               <Routes>
@@ -55,12 +46,8 @@ function App() {
                 <Route path="/product/:id" element={<ProductDetails/>}/>
                 <Route path="/restaurant/:id" element={<RestaurantDetails/>}/>
                 <Route path="/cart" element={user ? <Cart/> : <Navigate to="/login"/>}/>
-                {!user &&
-                  <>
-                    <Route path="/login" element={<Login setShowNav={setShowNav}/>}/>
-                    <Route path="/register" element={<Register setShowNav={setShowNav}/>}/>
-                  </> 
-                }
+                <Route path="/login" element={user ? <Navigate to="/"/> : <Login setShowNav={setShowNav}/>}/>
+                <Route path="/register" element={<Register setShowNav={setShowNav}/>}/>
               </Routes> 
             </main>
             {showNav === true &&

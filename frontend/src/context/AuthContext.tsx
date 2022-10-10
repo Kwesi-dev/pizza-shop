@@ -1,12 +1,16 @@
 
 import { createContext, useEffect, useReducer } from "react"
+type userType = {
+    email: string,
+    password: string
+}
 
 //actions 
 export const loginStart = () => ({
     type: "loginStart"
 })
 
-export const loginSuccess = ( user : {} ) => (
+export const loginSuccess = ( user : null | userType ) => (
     {
         type: "LoginSuccess",
         payload: user
@@ -17,21 +21,20 @@ export const loginFailed = () => ({
     type: "loginFailed"
 })
 
-
 //reducer
 type initialStateTypes = {
-    user: {},
+    user: null | userType,
     isFetching: boolean,
     error: boolean,
 }
 
-type actionTypes = | { type: "loginStart"} | { type: "loginSuccess"; payload: {}} | { type: "loginFailed"}
+type actionTypes = | { type: "loginStart"} | { type: "loginSuccess"; payload: null | userType} | { type: "loginFailed"} | { type: "logout"}
 const reducer = ( state: initialStateTypes, action: actionTypes ) => {
     switch(action.type){
        case "loginStart" : 
             return{
                 ...state,
-                user: {},
+                user: null,
                 isFetching: true,
                 error: false 
             };
@@ -45,10 +48,17 @@ const reducer = ( state: initialStateTypes, action: actionTypes ) => {
         case "loginFailed" : 
             return{
                 ...state,
-                user: {},
+                user: null,
                 isFetching: false,
                 error: false 
             };
+        case "logout" : 
+            return {
+                ...state,
+                user: null,
+                isFetching: false,
+                error: false        
+            }
         default: 
             return state
     }
@@ -57,7 +67,7 @@ const reducer = ( state: initialStateTypes, action: actionTypes ) => {
 //context
 
 const initialState : initialStateTypes = {
-    user: JSON.parse(localStorage.getItem('user') || '{}'),
+    user: null || JSON.parse(localStorage.getItem('user') || 'null'),
     isFetching: false,
     error: false,
 }

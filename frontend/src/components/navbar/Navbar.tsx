@@ -5,6 +5,8 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import "./navbar.scss";
 import { Link, NavLink, useLocation } from "react-router-dom"
 import { Menu } from "@mui/icons-material"; 
+import { useContext } from "react"
+import { AuthContext } from "../../context/AuthContext"
 
 type slideMenuProps = {
     slideOpen: boolean,
@@ -13,7 +15,13 @@ type slideMenuProps = {
 
 const Navbar = ({slideOpen, setSlideOpen}: slideMenuProps) => {
     const location = useLocation()
+    const { state, dispatch } = useContext(AuthContext)
+    const user = state.user
     const path = location.pathname
+
+    const handleLogout = () => {
+        dispatch({ type: "logout"})
+    }
   return (
     <div className={path === "/" ? "navbar" : "navbar nav-bg-white"}>
         <div className="navbar-wrapper">
@@ -68,11 +76,16 @@ const Navbar = ({slideOpen, setSlideOpen}: slideMenuProps) => {
                         </div>
                     </Link>
                     <SearchOutlinedIcon className="search-icon"/>
-                    <NavLink to="/login" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
-                        <li className="nav-link">
-                            <p>Login</p>
+                    {!user ? 
+                        <NavLink to="/login" style={{textDecoration: "none", color: "inherit"}} className={({isActive})=> isActive ? "nav-active" : ""}>
+                            <li className="nav-link">
+                                <p>Login</p>
+                            </li>
+                        </NavLink> : 
+                        <li className="nav-link" onClick={handleLogout}>
+                            <p>Logout</p>
                         </li>
-                    </NavLink>
+                    }
                 </div>
             </div>
             <div className="nav-right-mobile-container">

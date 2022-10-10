@@ -10,11 +10,11 @@ import facebooklogo from "../../assets/images/facebook.png"
 import googlelogo from "../../assets/images/google.png"
 import twitterlogo from "../../assets/images/twitter.png"
 import backgroundImg from "../../assets/images/background.png"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { axiosInstance } from "../../http/axiosRequests";
 import loadingGif from "../../assets/gifs/loading.gif"
-import { AuthContext, loginFailed, loginStart, loginSuccess } from "../../context/AuthContext"
+import { AuthContext } from "../../context/AuthContext"
 
 type formInputs = {
   email: string,
@@ -27,6 +27,7 @@ type loginProps =  {
 const Login = ({ setShowNav }: loginProps) => {
   const [passwordVisible, setPasswordVisible] = useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState("")
+  const navigate = useNavigate()
   const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful, dirtyFields, }} = useForm({
     defaultValues:{
       email: "",
@@ -52,9 +53,9 @@ const Login = ({ setShowNav }: loginProps) => {
     dispatch({ type: "loginStart"})  
     try{
         const res = await axiosInstance.post("/auth/login", data)
-        console.log(res)
         dispatch({type: "loginSuccess", payload: res.data})
-    }catch(err: any){
+        navigate("/")
+      }catch(err: any){
       setErrorMessage(err?.response?.data?.message)
       dispatch({ type: "loginFailed"})
     }
