@@ -18,10 +18,12 @@ const Navbar = ({slideOpen, setSlideOpen}: slideMenuProps) => {
     const { state, dispatch } = useContext(AuthContext)
     const user = state.user
     const path = location.pathname
-
+    const pathnames = ["/login", "/register"]
     const handleLogout = () => {
         dispatch({ type: "logout"})
     }
+    console.log("pathname: ", path);
+    if(pathnames.includes(path)) return ( <></> ) 
   return (
     <div className={path === "/" ? "navbar" : "navbar nav-bg-white"}>
         <div className="navbar-wrapper">

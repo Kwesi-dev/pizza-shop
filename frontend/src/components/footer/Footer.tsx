@@ -3,7 +3,12 @@ import appstore from "../../assets/images/appstore.png"
 import playstore from "../../assets/images/playstore.png"
 import logo from "../../assets/images/logo.png"
 import "./footer.scss"
+import { useLocation } from "react-router-dom"
 const Footer = () => {
+  const location = useLocation()
+  const path = location.pathname
+  const pathnames = ["/login", "/register"]
+  if(pathnames.includes(path)) return (<></>)
   return (
     <section className="footer">
         <div className="footer-wrapper">

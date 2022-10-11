@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import './App.scss';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
@@ -11,31 +11,23 @@ import Restaurants from './pages/restaurants/Restaurants';
 import ProductDetails from './pages/productDetails/ProductDetails'
 import RestaurantDetails from './pages/restaurantDetails/RestaurantDetails';
 import Cart from './pages/cart/Cart';
-import SlideMenu from './components/sliderMenu/SlideMenu';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import AuthContextProvider, { AuthContext } from "./context/AuthContext"
 
-
 function App() {
   const [slideOpen, setSlideOpen] = useState(false)
   const [showNav, setShowNav] = useState(true)
-  const pathname = window.location.pathname
   const { state } = useContext(AuthContext)
   const user = state.user
-  const pathnames = ["/login", "/register"]
-  console.log(pathnames.includes(pathname))
-  console.log(pathname)
+
   return (
     <Router>
       <AuthContextProvider>
         <div className="App">
-          <SlideMenu slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
-            {pathnames.includes(pathname) ? "" :
-                <header>
-                    <Navbar slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
-                </header>
-            }
+            <header>
+                <Navbar slideOpen={slideOpen} setSlideOpen={setSlideOpen}/>
+            </header>
             <main>
               <Routes>
                 <Route path="/" element={<Home/>}/>
